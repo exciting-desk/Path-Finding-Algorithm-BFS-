@@ -11,13 +11,31 @@ start = []
 end = []
 
 def test_int(var):
+    """
+    Test if a variable can be converted to an int
+
+    Args: 
+        var: variable to test
+
+    Returns: 
+        (Bool): True if var can be converted to an int, False otherwise
+    """
+
     try:
         int(var)
     except:
         return False
     return True
 
+
 def get_coord():
+    """
+    Prompt the user for coordinates and validate that they are valid (exist in coords)
+
+    Returns: 
+        List[int]: the valid coordinates entered by the user
+    """
+
     print("\nEnter the coordinates :\n")
     x = input("\nX : ")
     test_int(x)
@@ -30,7 +48,13 @@ def get_coord():
     else:
         return coord
 
+
 def set_size():
+    """
+    Prompt the user for the size of the maze and initialize the coords and walls lists
+
+    """
+
     while True:
         choice = input("\nEnter the size of your maze\nThe size of the maze should be strictly superior to 0.\n")
         try:
@@ -48,6 +72,12 @@ def set_size():
             break
 
 def create_maze():
+    """
+    Main function to create the maze, allowing the user to add/remove walls, set start/end points,
+    find the shortest path, and reset the maze
+
+    """
+    
     global coords
     global walls
     global size
