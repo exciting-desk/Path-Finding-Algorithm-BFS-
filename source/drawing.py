@@ -69,7 +69,7 @@ def initial_draw(walls, path, start, end):
         coord_c += 1
         f_map += "\n"
 
-def draw(walls, size, start, end, path):
+def draw(walls, size, start, end, path=[]):
     """
     Draws the final map using print()
 
