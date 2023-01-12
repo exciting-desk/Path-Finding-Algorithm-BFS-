@@ -1,6 +1,7 @@
 from os import system
 from drawing import draw, split_coords
 import time
+import algo
 
 
 coords = []
@@ -114,7 +115,9 @@ def create_maze():
                 draw(walls, size, start, end)
                 choice = input("\nAre you sure you ?\n")
                 if choice.lower() == "yes" or choice.lower() == "y":
-                    return (coords, walls, start, end, size)
+                    path = algo.find_path(coords, walls, start, end, size)
+                    draw(walls, size, start, end, path)
+                    break
 
 
         elif choice.lower() == "help":

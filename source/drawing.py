@@ -10,6 +10,7 @@ def split_coords(coords, size):
         size (int): The size of the maze.
     """
     global s_coords
+    s_coords = []
     temp_s = []
     counter = 0
     for i in coords:
@@ -68,7 +69,7 @@ def initial_draw(walls, path, start, end):
         coord_c += 1
         f_map += "\n"
 
-def draw(walls, size, start, end, path=[]):
+def draw(walls, size, start, end, path):
     """
     Draws the final map using print()
 
